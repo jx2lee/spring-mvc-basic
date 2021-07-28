@@ -1,6 +1,5 @@
 package com.jx2lee.springmvc.web.frontcontroller.v4;
 
-import com.jx2lee.springmvc.web.frontcontroller.ModelView;
 import com.jx2lee.springmvc.web.frontcontroller.MyView;
 import com.jx2lee.springmvc.web.frontcontroller.v4.controller.MemberFormControllerV4;
 import com.jx2lee.springmvc.web.frontcontroller.v4.controller.MemberListControllerV4;
