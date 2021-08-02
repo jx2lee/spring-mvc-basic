@@ -1,4 +1,4 @@
-package com.jx2lee.springmvc.web.springmvc.v1;
+package com.jx2lee.springmvc.web.springmvc.v2;
 
 import com.jx2lee.springmvc.domain.member.Member;
 import com.jx2lee.springmvc.domain.member.MemberRepository;
@@ -7,14 +7,31 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @Controller
-public class SpringMemberSaveControllerV1 {
+@RequestMapping("/springmvc/v2/members")
+// class 에 해당 어노테이션을 추가하면 아래 함수에서 생략이 가능하다.
+public class SpringMemberControllerV2 {
 
     private MemberRepository memberRepository = MemberRepository.getInstance();
 
-    @RequestMapping("/springmvc/v1/members/save")
-    public ModelAndView process(HttpServletRequest request) {
+    @RequestMapping("/new-form")
+    public ModelAndView newForm() {
+        return new ModelAndView("new-form");
+    }
+
+    @RequestMapping()
+    public ModelAndView save() {
+        List<Member> members = memberRepository.findAll();
+
+        ModelAndView mv = new ModelAndView("members");
+        mv.addObject("members", members);
+        return mv;
+    }
+
+    @RequestMapping("/save")
+    public ModelAndView members(HttpServletRequest request) {
         String username = request.getParameter("username");
         int age = Integer.parseInt(request.getParameter("age"));
 
