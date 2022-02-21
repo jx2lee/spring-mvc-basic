@@ -1,1 +1,2 @@
-rootProject.name = 'spring-mvc'
+rootProject.name = 'spring-mvc-getting-started'
+include ':getting-started-mvc'
