@@ -1,29 +1,19 @@
-plugins {
-	id 'java'
-	id 'org.springframework.boot' version '2.5.6'
-	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-}
-
-group 'io.github.jx2lee'
-version '1.0.0-SNAPSHOT'
-
-configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
+buildscript {
+	ext {
+		springBootVersion = '2.5.6'
 	}
-}
-
-repositories {
-	mavenCentral()
-}
-
-test {
-	useJUnitPlatform()
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath "io.spring.gradle:dependency-management-plugin:1.0.11.RELEASE"
+	}
 }
 
 subprojects {
 	group 'io.github.jx2lee'
-	version '1.0-.0SNAPSHOT'
+	version '1.0.0'
 
 	apply plugin: 'java'
 	apply plugin: 'org.springframework.boot'
@@ -32,15 +22,8 @@ subprojects {
 	repositories {
 		mavenCentral()
 	}
-	dependencies {
-		testImplementation group: 'junit', name: 'junit', version: '4.13.2'
-	}
 
 	test {
 		useJUnitPlatform()
 	}
-}
-
-bootJar {
-	enabled(false)
 }

@@ -1,7 +1,27 @@
-dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    compileOnly 'org.projectlombok:lombok'
-    annotationProcessor 'org.projectlombok:lombok'
-    compileOnly 'org.springframework.boot:spring-boot-starter-tomcat'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+project(":getting-started-mvc") {
+
+    apply plugin: 'war'
+
+    dependencies {
+        implementation 'org.springframework.boot:spring-boot-starter-web'
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+        // JSP
+        implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+        implementation 'javax.servlet:jstl'
+
+        // lombok
+        compileOnly 'org.projectlombok:lombok'
+        annotationProcessor 'org.projectlombok:lombok'
+
+        // tomcat-war
+        providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+    }
+
+    configurations {
+        compileOnly {
+            extendsFrom annotationProcessor
+        }
+    }
 }
+
