@@ -1,4 +1,4 @@
-project(":getting-started-mvc") {
+project(":part-1") {
 
     apply plugin: 'war'
 

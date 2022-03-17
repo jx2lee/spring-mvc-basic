@@ -6,10 +6,10 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 
 @ServletComponentScan
 @SpringBootApplication
-public class GettingStartedMvcApplication {
+public class MvcPart1Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(GettingStartedMvcApplication.class, args);
+        SpringApplication.run(MvcPart1Application.class, args);
     }
 
 }
