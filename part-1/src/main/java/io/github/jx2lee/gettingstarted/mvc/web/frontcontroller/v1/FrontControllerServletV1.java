@@ -35,21 +35,8 @@ public class FrontControllerServletV1 extends HttpServlet {
 
         controller.process(request, response);
     }
+
+    public Map<String, ControllerV1> getControllerMap() {
+        return controllerMap;
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
