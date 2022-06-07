@@ -17,11 +17,5 @@ project(":part-1") {
         // tomcat-war
         providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
     }
-
-    configurations {
-        compileOnly {
-            extendsFrom annotationProcessor
-        }
-    }
 }
 
